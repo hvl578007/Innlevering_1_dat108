@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Oppg3",
+            "request": "launch",
+            "mainClass": "no.hvl.dat108.Oppg3",
+            "projectName": "Oblig_1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Oppg2b",
+            "request": "launch",
+            "mainClass": "no.hvl.dat108.Oppg2b",
+            "projectName": "Oblig_1"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Oppg2a",
+            "request": "launch",
+            "mainClass": "no.hvl.dat108.Oppg2a",
+            "projectName": "Oblig_1"
+        }
+    ]
+}

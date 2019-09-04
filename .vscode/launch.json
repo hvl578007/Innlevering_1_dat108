@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Oppg4",
+            "request": "launch",
+            "mainClass": "no.hvl.dat108.Oppg4",
+            "projectName": "Oblig_1"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Oppg3",
             "request": "launch",
             "mainClass": "no.hvl.dat108.Oppg3",

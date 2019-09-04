@@ -9,6 +9,7 @@ import java.util.function.Function;
  */
 public class Oppg3 {
 
+    // Ferdig???
     public static void main(String[] args) {
         Ansatt a1 = new Ansatt("Stian", "Grønås", Kjonn.mann, "IT", 400000);
         Ansatt a2 = new Ansatt("Renate", "Grønås", Kjonn.kvinne, "Kjemikar", 450000);

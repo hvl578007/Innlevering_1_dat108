@@ -1,36 +1,47 @@
 ﻿package no.hvl.dat108;
 
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * Oppg1
  */
 public class Oppg1 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        //"copy-paste liste" med namn:
-        List<String> listeAvNamn = Arrays.asList("Stian", "Renate", "Jonas", "Tara", "Asbjørn", "Rita", "Grønås");
-        
-        Thread skrive1 = new Thread(SkriveRunnable::new);
-        Thread skrive2 = new Thread(SkriveRunnable::new);
-        Thread skrive3 = new Thread(SkriveRunnable::new);
-        Thread skrive4 = new Thread(SkriveRunnable::new);
-        Thread skrive5 = new Thread(SkriveRunnable::new);
+        //liste med namn, er synchronized:
+        NamneListe liste = new NamneListe();
+        StringBuffer s = new StringBuffer(liste.hent());
+        Person p = new Person(s);
+
+        Thread skrive1 = new Thread(new SkriveRunnable(liste, p, 1));
+        Thread skrive2 = new Thread(new SkriveRunnable(liste, p, 2));
+        Thread skrive3 = new Thread(new SkriveRunnable(liste, p, 3));
+        Thread skrive4 = new Thread(new SkriveRunnable(liste, p, 4));
+        Thread skrive5 = new Thread(new SkriveRunnable(liste, p, 5));
     
-        Thread lese1 = new Thread(LeseRunnable::new);
-        Thread lese2 = new Thread(LeseRunnable::new);
-        Thread lese3 = new Thread(LeseRunnable::new);
-        Thread lese4 = new Thread(LeseRunnable::new);
-        Thread lese5 = new Thread(LeseRunnable::new);
+        Thread lese1 = new Thread(new LeseRunnable(p, 1));
+        Thread lese2 = new Thread(new LeseRunnable(p, 2));
+        Thread lese3 = new Thread(new LeseRunnable(p, 3));
+        Thread lese4 = new Thread(new LeseRunnable(p, 4));
+        Thread lese5 = new Thread(new LeseRunnable(p, 5));
+
+        //min versjon - med wait og notify (i Person klassen) og synchronized.
+        //er også ein v1 kommentert vekk i Person/Runnable klassane
+        
+        //alternativ - modifisert lærar sin kode med Semaphor - sjå i readerwriter mappa/package 
 
         //lese: hente namn og skrive ut til system.out.println
 
         //skrive: hente neste namn frå ein tabell av namn og sette nytt namn på personen.
-        //sidan det skal vere ein "sirkulær tabell" må ein leggje til namnet på nytt (bakerst) eller noko...?????
-
-        // vanskeleg å gjere dette når ein såvidt har lært noko ... !!!!!!
-
+        lese1.start();
+        skrive1.start();
+        lese2.start();
+        skrive2.start();
+        lese3.start();
+        skrive3.start();
+        lese4.start();
+        skrive4.start();
+        lese5.start();
+        skrive5.start();
+        
     }
 }

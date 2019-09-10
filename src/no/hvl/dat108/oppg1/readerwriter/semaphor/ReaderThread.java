@@ -1,10 +1,9 @@
-package no.hvl.dat108.readerwriter.semaphor;
+package no.hvl.dat108.oppg1.readerwriter.semaphor;
 
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import no.hvl.dat108.NamneListe;
-import no.hvl.dat108.Person;
+import no.hvl.dat108.oppg1.*;
 
 /**
  * Klasse for � definere lese-prosess.

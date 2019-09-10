@@ -1,9 +1,10 @@
-package no.hvl.dat108.readerwriter.semaphor;
+package no.hvl.dat108.oppg1.readerwriter.semaphor;
 
 import java.util.concurrent.Semaphore;
 
-import no.hvl.dat108.NamneListe;
-import no.hvl.dat108.Person;
+import no.hvl.dat108.oppg1.NamneListe;
+import no.hvl.dat108.oppg1.Person;
+
 
 /**
  * Eksempel p� synkronisering. Benytter eksempelet "Readers-Writer".

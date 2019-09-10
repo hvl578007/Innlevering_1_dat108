@@ -3,7 +3,8 @@ package no.hvl.dat108.readerwriter.semaphor;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import no.hvl.dat108.readerwriter.Tall;
+import no.hvl.dat108.NamneListe;
+import no.hvl.dat108.Person;
 
 /**
  * Klasse for � definere lese-prosess.
@@ -12,11 +13,14 @@ import no.hvl.dat108.readerwriter.Tall;
  */
 public class ReaderThread extends Thread {
 
-    private Tall tall;
+    //private Tall tall;
     private Semaphore mutex;
     private Semaphore writer;
     private static AtomicInteger antallReaders = new AtomicInteger(0);
     private Integer nr;
+
+    //Person objekt
+    private Person p;
 
     /**
      * Lager en ny Reader.
@@ -25,8 +29,8 @@ public class ReaderThread extends Thread {
      * @param mutex
      * @param writer
      */
-    public ReaderThread(Tall tall, Semaphore mutex, Semaphore writer, Integer nr) {
-        this.tall = tall;
+    public ReaderThread(Person person, Semaphore mutex, Semaphore writer, Integer nr) {
+        this.p = person;
         this.mutex = mutex;
         this.writer = writer;
         this.nr = nr;
@@ -55,7 +59,7 @@ public class ReaderThread extends Thread {
             mutex.release();
 
             // Leser den delte ressursen
-            System.out.println("Leser   (" + nr + "): " + tall);
+            System.out.println("Leser   (" + nr + "): " + p);
 
             // venter p� � f� forlate regionen
             try {

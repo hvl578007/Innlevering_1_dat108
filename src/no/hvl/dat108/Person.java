@@ -23,6 +23,12 @@ public class Person {
         return namn.toString();
     }
 
+    //skal bruke med semaphor
+    public void setNamnNormal(String namn) {
+        this.namn.delete(0, this.namn.length());
+        this.namn.append(namn);
+    }
+
     //berre ein kan lese om gangen
     public synchronized String getNamnSync() {
         return namn.toString();

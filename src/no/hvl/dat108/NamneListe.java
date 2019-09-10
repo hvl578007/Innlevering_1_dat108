@@ -24,6 +24,12 @@ public class NamneListe {
         return namn;
     }
 
+    public String hentUtanSync() {
+        String namn = listeAvNamn.remove(0);
+        listeAvNamn.add(namn);
+        return namn;
+    }
+
     @Override
     public String toString() {
         return listeAvNamn.toString();

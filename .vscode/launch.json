@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "no.hvl.dat108.readerwriter.semaphor.Main",
+            "projectName": "Oblig_1"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Oppg1",
             "request": "launch",
             "mainClass": "no.hvl.dat108.Oppg1",

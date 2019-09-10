@@ -39,6 +39,8 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        //var litt vanskeleg å forstå Semaphorer og slikt... det "fungerer" med 5 skrivarar nå? dei skriv ikkje over kvarandre nå så...
+
         Thread[] readerThread = new ReaderThread[READERS];
         Thread[] writerThread = new WriterThread[WRITERS];
 

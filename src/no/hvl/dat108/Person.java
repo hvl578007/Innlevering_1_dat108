@@ -31,6 +31,7 @@ public class Person {
     //v2 - personen må ha blitt lest for at ein kan skrive, og omvendt
     private boolean erLest;
 
+    //ny setnamn som ventar på at objektet har blitt lest før ein skriv nytt namn
     public synchronized void setNamn2(String namn) throws InterruptedException {
         while(!erLest) {
             wait();
@@ -41,6 +42,7 @@ public class Person {
         notify();
     }
 
+    //dei kan berre lese ein om gangen, om ein fjernar synchronized kan vel fleire komme inn før ein av dei set erLest til true
     public synchronized String getNamn2() throws InterruptedException {
         while(erLest) {
             wait();

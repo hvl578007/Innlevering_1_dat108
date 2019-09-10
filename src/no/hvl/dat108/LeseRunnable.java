@@ -19,9 +19,10 @@ public class LeseRunnable implements Runnable {
         // versjon 1
         // String namn = person.getNamnSync();
 
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 50; i++) { //while(true)
             // versjon 2
             try {
+                //hentar ut og skriv ut namnet
                 System.out.println("Leser (" + nr + "): " + this.person.getNamn2());
             } catch (InterruptedException e) {
                 e.printStackTrace();

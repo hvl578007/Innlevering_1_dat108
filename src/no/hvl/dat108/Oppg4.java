@@ -52,6 +52,7 @@ public class Oppg4 {
         tilsette.stream()
         .filter(a -> a.getStilling().contains("sjef"))
         .forEach(a -> a.setAarslonn((int)(a.getAarslonn()*1.07)));
+        //må endre her!!! - lagre som funksjon? lagre liste av sjefar og så gje lønnsaukning!?
 
         System.out.println("Alle tilsette der sjefane har fått auke:");
         skrivUtAlle(tilsette);
@@ -91,6 +92,6 @@ public class Oppg4 {
     }
 
     private static <T> void skrivUtAlle(List<T> liste) {
-        liste.stream().forEach(System.out::println);
+        liste.forEach(System.out::println);
     }
 }

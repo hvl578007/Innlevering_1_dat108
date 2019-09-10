@@ -61,10 +61,10 @@ public class Oppg3 {
 
     //kan jo leggje til ein til parameter her, som vil filtrere ut dei som det ikkje skal oppdaterast på ??? - Eit "Predicate". Og evt ein int med verdi (prosent/kr???)
     private static void lonnsoppgjor(List<Ansatt> tilsette, Function<Ansatt, Integer> f) {
-        tilsette.stream().forEach(a -> a.setAarslonn(f.apply(a)));
+        tilsette.forEach(a -> a.setAarslonn(f.apply(a)));
     }
 
     private static void skrivUtAlle(List<Ansatt> tilsette) {
-        tilsette.stream().forEach(System.out::println);
+        tilsette.forEach(System.out::println);
     }
 }

@@ -25,6 +25,7 @@ public class Oppg1 {
         Thread lese5 = new Thread(new LeseRunnable(p, 5));
 
         //min versjon - med wait og notify (i Person klassen) og synchronized.
+        //dei kan berre lese/skrive ein om gongen her då
         //er også ein v1 kommentert vekk i Person/Runnable klassane
         
         //alternativ - modifisert lærar sin kode med Semaphor - sjå i readerwriter mappa/package 

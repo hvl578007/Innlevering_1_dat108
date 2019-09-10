@@ -21,12 +21,14 @@ public class SkriveRunnable implements Runnable {
         // versjon 1:
         // person.setNamn(namn);
 
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 50; i++) { //while(true)
 
+            //hentar namn frå lista
             String namn = liste.hent();
 
             // versjon 2
             try {
+                //set det nye namnet
                 person.setNamn2(namn);
                 System.out.println("Skrivar (" + nr + "): " + namn);
             } catch (InterruptedException e) {

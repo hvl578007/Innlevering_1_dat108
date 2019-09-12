@@ -25,8 +25,8 @@ public class Oppg1 {
         Thread lese5 = new Thread(new LeseRunnable(p, 5));
 
         //min versjon - med wait og notify (i Person klassen) og synchronized.
-        //dei kan berre lese/skrive ein om gongen her då
-        //er også ein v1 kommentert vekk i Person/Runnable klassane
+        //dei kan berre lese/skrive ein om gongen her då. Ikkje heilt som i oppgåveteksten då men "nesten"?
+        //er også ein v1 kommentert vekk i Person/Runnable klassane, berre synchronized her
         
         //alternativ - modifisert lærar sin kode med Semaphor - sjå i readerwriter mappa/package 
 
@@ -34,14 +34,15 @@ public class Oppg1 {
 
         //skrive: hente neste namn frå ein tabell av namn og sette nytt namn på personen.
         lese1.start();
-        skrive1.start();
         lese2.start();
-        skrive2.start();
         lese3.start();
-        skrive3.start();
         lese4.start();
-        skrive4.start();
         lese5.start();
+
+        skrive1.start();
+        skrive2.start();
+        skrive3.start();
+        skrive4.start();
         skrive5.start();
         
     }

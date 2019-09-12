@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 /**
  * Oppg4
@@ -26,7 +25,7 @@ public class Oppg4 {
             .map(Ansatt::getEtternamn)
             .collect(Collectors.toList());
 
-        System.out.println("Etternamn");;
+        System.out.println("Etternamn: ");;
         skrivUtAlle(etternamna);
 
 
@@ -35,7 +34,7 @@ public class Oppg4 {
             .filter(a -> a.getKjonn() == Kjonn.kvinne)
             .count();
 
-        System.out.println("Tal på kvinner: " + talPaaKvinner);
+        System.out.println("\nTal på kvinner: " + talPaaKvinner);
 
 
         //c) Rekn ut gjen.snittlønn til kvinnene
@@ -45,29 +44,31 @@ public class Oppg4 {
             .average()
             .getAsDouble();
 
-        System.out.println("Gjnsnittlønn til kvinnene: " + gjnsnittLoenn);
+        System.out.println("\nGjnsnittlønn til kvinnene: " + gjnsnittLoenn);
 
 
         //d) Gje alle sjefar (stillig inneheld sjef) ein lønnsaukning på 7% via streams direkte, forEach sluttar det, skal den lagrast i noko her?
-        tilsette.stream()
-        .filter(a -> a.getStilling().contains("sjef"))
-        .forEach(a -> a.setAarslonn((int)(a.getAarslonn()*1.07)));
-        //må endre her!!! - lagre som funksjon? lagre liste av sjefar og så gje lønnsaukning!?
+        List<Ansatt> sjefsListe = tilsette.stream()
+            .filter(a -> a.getStilling().contains("sjef"))
+            .collect(Collectors.toList());
 
-        System.out.println("Alle tilsette der sjefane har fått auke:");
-        skrivUtAlle(tilsette);
+        sjefsListe.forEach(a -> a.setAarslonn((int)(a.getAarslonn()*1.07)));
+        //dette ein skulle gjere?
+
+        System.out.println("\nSjefane har fått lønnsaukning:");
+        skrivUtAlle(sjefsListe);
 
 
         //e) Finn ut om det er nokon som tjene meir enn 800000
         boolean meirEnn800k = tilsette.stream()
         .anyMatch(a -> a.getAarslonn() > 800000);
 
-        System.out.println("Er det ein som tjenar meir enn 800k? " + meirEnn800k);
+        System.out.println("\nEr det ein som tjenar meir enn 800k? " + meirEnn800k);
 
 
         //f) Skriv ut alle dei tilsette med System.out.println() utan å bruke løkkje
         //sjå: skrivUtAlle()
-        //tilsette.stream().forEach(System.out::println);
+        //tilsette.forEach(System.out::println);
 
 
         //g) Finn og skriv ut den/dei tilsette som har lågast lønn
@@ -80,14 +81,14 @@ public class Oppg4 {
             .filter(a -> a.getAarslonn() == minsteLoenn)
             .collect(Collectors.toList());
 
-        System.out.println("Dei med den minste lønna -" + minsteLoenn + "- :");
+        System.out.println("\nDei med den minste lønna (" + minsteLoenn + ",-) :");
         skrivUtAlle(tilsetteMedLiteLoenn);
 
 
         //h) Finn og skriv ut summen av alle heiltal i [1, 1000> som er deleleg med 3 eller 5
-        IntStream straumAvHeiltal = IntStream.iterate(0, i -> i < 1000, i -> i+1);
+        IntStream straumAvHeiltal = IntStream.iterate(1, i -> i < 1000, i -> i+1);
         int sum = straumAvHeiltal.filter(i -> i % 5 == 0 || i % 3 == 0).sum();
-        System.out.println("Sum av heiltal deleleg på 3 eller 5 og er frå 1-999: " + sum);
+        System.out.println("\nSum av heiltal deleleg på 3 eller 5 og er frå 1-999: " + sum);
         
     }
 

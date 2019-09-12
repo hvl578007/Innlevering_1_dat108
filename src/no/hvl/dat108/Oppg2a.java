@@ -13,10 +13,10 @@ public class Oppg2a {
         List<String> lista = Arrays.asList("10", "1", "20", "110", "21", "12");
 
         //gjer om kvar streng til int og så trekk dei frå kvarandre
-        lista.sort( (s1, s2) -> Integer.parseInt(s1) - Integer.parseInt(s2));
+        lista.sort((s1, s2) -> Integer.parseInt(s1) - Integer.parseInt(s2));
         
         //stream for å enkelt skrive ut alle
-        lista.stream().forEach(System.out::println);
+        lista.forEach(System.out::println);
 
         // -- FERDIG --
     }

@@ -16,15 +16,15 @@ public class Oppg2b {
 
         //i. Summen av 12 og 13
         int svar1 = beregn(12, 13, summer);
-        System.out.println(svar1);
+        System.out.println("Sum: " + svar1);
 
         //ii. Den største av -5 og 3
         int svar2 = beregn(-5, 3, storsteAv);
-        System.out.println(svar2);
+        System.out.println("Den største: " + svar2);
 
         //iii. Avstanden (absoluttverdien av differansen) mellom 54 og 45
         int svar3 = beregn(54, 45, avstand);
-        System.out.println(svar3);
+        System.out.println("Avstand: " + svar3);
     }
 
     //beregn som tar inn ein BiFunction + 2 int-ar

@@ -9,7 +9,6 @@ import java.util.function.Function;
  */
 public class Oppg3 {
 
-    // Ferdig???
     public static void main(String[] args) {
         Ansatt a1 = new Ansatt("Stian", "Grønås", Kjonn.mann, "IT", 400000);
         Ansatt a2 = new Ansatt("Renate", "Grønås", Kjonn.kvinne, "Kjemikar", 450000);
@@ -62,6 +61,7 @@ public class Oppg3 {
     //kan jo leggje til ein til parameter her, som vil filtrere ut dei som det ikkje skal oppdaterast på ??? - Eit "Predicate". Og evt ein int med verdi (prosent/kr???)
     private static void lonnsoppgjor(List<Ansatt> tilsette, Function<Ansatt, Integer> f) {
         tilsette.forEach(a -> a.setAarslonn(f.apply(a)));
+        //skulle ein bruke dette? Evt kan ein bruke for-løkke og gjere det manuelt
     }
 
     private static void skrivUtAlle(List<Ansatt> tilsette) {
